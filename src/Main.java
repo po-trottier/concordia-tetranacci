@@ -63,20 +63,22 @@ public class Main {
     MultipleRecursion.Tetranacci(x);
   }
 
+  private static void redirectConsoleOutput(String file) {
+    PrintStream fileOut = null;
+    try {
+      fileOut = new PrintStream("./" + file);
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+    System.setOut(fileOut);
+  }
+
   public static void main(String[] args) {
     // EXECUTE THE LINEAR RECURSION ALGORITHM
 
     // Redirect Console Output to OutLinear.txt
-     PrintStream fileOut = null;
     // This code was disabled to avoid overwriting the previously obtained results
-    /*
-     try {
-       fileOut = new PrintStream("./OutLinear.txt");
-     } catch (FileNotFoundException e) {
-       e.printStackTrace();
-     }
-     System.setOut(fileOut);
-    */
+    // redirectConsoleOutput("OutLinear.txt");
 
     // Start the execution of the algorithms
     System.out.println("Running the Linear Recursive Algorithm");
@@ -90,16 +92,9 @@ public class Main {
 
     // EXECUTE THE LINEAR TAIL RECURSION ALGORITHM (Because of Part C)
 
-    // This code was disabled to avoid overwriting the previously obtained results
-    /*
     // Redirect Console Output to OutLinearTail.txt
-    try {
-      fileOut = new PrintStream("./OutLinearTail.txt");
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-    System.setOut(fileOut);
-    */
+    // This code was disabled to avoid overwriting the previously obtained results
+    // redirectConsoleOutput("OutLinearTail.txt");
 
     System.out.println("Running the Linear Tail Recursive Algorithm");
     System.out.println("--------------------------------------------\n");
@@ -113,12 +108,7 @@ public class Main {
     // EXECUTE THE MULTIPLE RECURSION ALGORITHM
 
     // Redirect Console Output to OutMultiple.txt
-    try {
-      fileOut = new PrintStream("./OutMultiple.txt");
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-    System.setOut(fileOut);
+    redirectConsoleOutput("OutMultiple.txt");
 
     System.out.println("Running the Multiple Recursive Algorithm");
     System.out.println("----------------------------------------\n");
