@@ -9,9 +9,65 @@
 // THE PSEUDOCODE FOR BOTH ALGORITHMS IS LOCATED ABOVE
 // THE RESPECTIVE CLASSES
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.util.Scanner;
+
 public class Main {
+  private static Scanner in = new Scanner(System.in);
+
+  // Execution function for the Linear Algorithm
+  private static void runLinearAlgorithm(int x) {
+    System.out.println("Getting the Tetranacci sequence for n = " + x);
+    // Reset the Call Counter before every execution
+    LinearRecursion.callsCounter = 0;
+    // Get the time in Nano Seconds before the Algorithm is executed
+    long startTime = System.nanoTime();
+    // Execute the Algorithm
+    long[] A = LinearRecursion.Tetranacci(x);
+    // Get the time in Nano Seconds after the Algorithm was executed
+    long endTime = System.nanoTime();
+    // Get the time time difference (Time Elapsed)
+    long timeElapsed = endTime - startTime;
+    // Output the results
+    System.out.println("\nThe value for Tetranacci(" + x + ") is: " + A[3]);
+    System.out.println("The function was called " + LinearRecursion.callsCounter + " times.");
+    System.out.println("The function executed in " + timeElapsed + " ns.");
+  }
+
+  private static void runMultipleAlgorithm(int x) {
+    MultipleRecursion.Tetranacci(x);
+  }
+
   public static void main(String[] args) {
-    LinearRecursion.Tetranacci(10);
-    MultipleRecursion.Tetranacci(10);
+    // Redirect Console Output to Out.txt
+    PrintStream fileOut = null;
+    try {
+      fileOut = new PrintStream("./Out.txt");
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+    System.setOut(fileOut);
+
+    // Start the execution of the algorithms
+    System.out.println("Running the Linear Recursive Algorithm");
+    System.out.println("----------------------------------------\n");
+
+    // Run the Linear algorithm for n = 5, n = 10, n = 15, n = 20, etc.
+    for(int i = 5; i <= 100; i += 5) {
+      runLinearAlgorithm(i);
+      System.out.println("");
+    }
+
+    System.out.println("\n=========================================================\n\n");
+
+    System.out.println("Running the Multiple Recursive Algorithm");
+    System.out.println("----------------------------------------\n");
+
+    // Run the multiple algorithm for n = 5, n = 10, n = 15, n = 20, etc.
+    for(int i = 5; i <= 100; i += 5) {
+      runMultipleAlgorithm(i);
+      System.out.println("");
+    }
   }
 }

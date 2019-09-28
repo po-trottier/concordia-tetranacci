@@ -1,5 +1,5 @@
 class MultipleRecursion {
   static void Tetranacci(int n) {
-    System.out.println("Running the Multiple Recursion Algorithm");
+    System.out.println("Multiple Recursion Algorithm Logic HERE");
   }
 }
