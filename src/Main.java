@@ -7,8 +7,9 @@
 // SEE THE FILE "Observations.txt" IN THE ROOT OF THE PROJECT FOR
 // OUR OBSERVATIONS OF THE RESULTS.
 
-// SEE THE FILES "OutLinear.txt" and "OutMultiple.txt" IN THE ROOT
-// OF THE PROJECT FOR THE IMPLEMENTED ALGORITHM's OUTPUTS.
+// SEE THE FILES "OutLinear.txt", "OutLinearTail.txt" and
+// "OutMultiple.txt" IN THE ROOT OF THE PROJECT FOR THE
+// IMPLEMENTED ALGORITHM's OUTPUTS.
 
 // THE PSEUDOCODE FOR BOTH ALGORITHMS IS LOCATED ABOVE
 // THE RESPECTIVE CLASSES
@@ -39,11 +40,32 @@ public class Main {
     System.out.println("The function executed in " + timeElapsed + " ns.");
   }
 
+  // Execution function for the Linear Algorithm
+  private static void runLinearTailAlgorithm(int x) {
+    System.out.println("Getting the Tetranacci sequence for n = " + x);
+    // Reset the Call Counter before every execution
+    LinearTailRecursion.callsCounter = 0;
+    // Get the time in Nano Seconds before the Algorithm is executed
+    long startTime = System.nanoTime();
+    // Execute the Algorithm
+    long[] A = LinearTailRecursion.Tetranacci(x);
+    // Get the time in Nano Seconds after the Algorithm was executed
+    long endTime = System.nanoTime();
+    // Get the time time difference (Time Elapsed)
+    long timeElapsed = endTime - startTime;
+    // Output the results
+    System.out.println("\nThe value for Tetranacci(" + x + ") is: " + A[3]);
+    System.out.println("The function was called " + LinearTailRecursion.callsCounter + " times.");
+    System.out.println("The function executed in " + timeElapsed + " ns.");
+  }
+
   private static void runMultipleAlgorithm(int x) {
     MultipleRecursion.Tetranacci(x);
   }
 
   public static void main(String[] args) {
+    // EXECUTE THE LINEAR RECURSION ALGORITHM
+
     // Redirect Console Output to OutLinear.txt
      PrintStream fileOut = null;
     // This code was disabled to avoid overwriting the previously obtained results
@@ -65,6 +87,30 @@ public class Main {
       runLinearAlgorithm(i);
       System.out.println("");
     }
+
+    // EXECUTE THE LINEAR TAIL RECURSION ALGORITHM (Because of Part C)
+
+    // This code was disabled to avoid overwriting the previously obtained results
+    /*
+    // Redirect Console Output to OutLinearTail.txt
+    try {
+      fileOut = new PrintStream("./OutLinearTail.txt");
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+    System.setOut(fileOut);
+    */
+
+    System.out.println("Running the Linear Tail Recursive Algorithm");
+    System.out.println("--------------------------------------------\n");
+
+    // Run the linear tail algorithm for n = 5, n = 10, n = 15, n = 20, etc.
+    for(int i = 5; i <= 100; i += 5) {
+      runLinearTailAlgorithm(i);
+      System.out.println("");
+    }
+
+    // EXECUTE THE MULTIPLE RECURSION ALGORITHM
 
     // Redirect Console Output to OutMultiple.txt
     try {

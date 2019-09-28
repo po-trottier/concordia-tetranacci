@@ -1,9 +1,9 @@
-a)  See the LinearRecursion and MultipleRecursion classes for
+a)  See the LinearTailRecursion and MultipleRecursion classes for
     the implementations of the algorithms.
 
 b)  The Linear Recursion Algorithm is of exponential space
     complexity as it is not using tail recursion. Therefore,
-    every time the method calls itself (LinearRecursion : 58)
+    every time the function calls itself (LinearTailRecursion : 58)
     it must wait for the next call to finish before it can finish
     (it follows a first-in-last-out order). As for the time
     complexity, the algorithm seems to follow a linear complexity
@@ -12,5 +12,14 @@ b)  The Linear Recursion Algorithm is of exponential space
 c)  The Linear Recursion Algorithm does not currently implement
     tail recursion, as the recursive call is not the last
     instruction to be executed. It has been implemented that way
-    because the only parameter given to the function is the number
-    of elements we want to calculate.
+    because it is impossible to print the full list of Tetranacci
+    numbers if the algorithm is implemented with tail recursion.
+    If the algorithm is implemented with tail recursion in mind,
+    it will calculate the value of the element properly but it will
+    not display the first three zeros that are part of the Tetranacci
+    numbers. The list will start at the fourth element, because
+    displaying the initial zeros would require an initial array of
+    [0,0,0,0], which would effectively give a value of 0 to every
+    next element. we must therefore start with the array [0,0,0,1].
+    The tail recursive code for the linear algorithm is located in
+    the "LinearTailRecursion" class.
