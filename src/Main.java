@@ -1,10 +1,14 @@
 // IMPORTANT INFORMATION:
 
-// SEE THE FILE "Observations.txt" IN THE ROOT OF THE PROJECT
-// FOR OUR OBSERVATIONS OF THE RESULTS.
+// Written by:
+// Pierre-Olivier Trottier (40059235)
+// Nimit Jaggi (00000000)
 
-// SEE THE FILE "Out.txt" IN THE ROOT OF THE PROJECT
-// FOR THE IMPLEMENTED ALGORITHM's OUTPUTS.
+// SEE THE FILE "Observations.txt" IN THE ROOT OF THE PROJECT FOR
+// OUR OBSERVATIONS OF THE RESULTS.
+
+// SEE THE FILES "OutLinear.txt" and "OutMultiple.txt" IN THE ROOT
+// OF THE PROJECT FOR THE IMPLEMENTED ALGORITHM's OUTPUTS.
 
 // THE PSEUDOCODE FOR BOTH ALGORITHMS IS LOCATED ABOVE
 // THE RESPECTIVE CLASSES
@@ -40,14 +44,17 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    // Redirect Console Output to Out.txt
-    PrintStream fileOut = null;
-    try {
-      fileOut = new PrintStream("./Out.txt");
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-    System.setOut(fileOut);
+    // Redirect Console Output to OutLinear.txt
+     PrintStream fileOut = null;
+    // This code was disabled to avoid overwriting the previously obtained results
+    /*
+     try {
+       fileOut = new PrintStream("./OutLinear.txt");
+     } catch (FileNotFoundException e) {
+       e.printStackTrace();
+     }
+     System.setOut(fileOut);
+    */
 
     // Start the execution of the algorithms
     System.out.println("Running the Linear Recursive Algorithm");
@@ -59,7 +66,13 @@ public class Main {
       System.out.println("");
     }
 
-    System.out.println("\n=========================================================\n\n");
+    // Redirect Console Output to OutMultiple.txt
+    try {
+      fileOut = new PrintStream("./OutMultiple.txt");
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+    System.setOut(fileOut);
 
     System.out.println("Running the Multiple Recursive Algorithm");
     System.out.println("----------------------------------------\n");

@@ -1,4 +1,16 @@
-Linear Recursion:
+a)  See the LinearRecursion and MultipleRecursion classes for
+    the implementations of the algorithms.
 
+b)  The Linear Recursion Algorithm is of exponential space
+    complexity as it is not using tail recursion. Therefore,
+    every time the method calls itself (LinearRecursion : 58)
+    it must wait for the next call to finish before it can finish
+    (it follows a first-in-last-out order). As for the time
+    complexity, the algorithm seems to follow a linear complexity
+    (executed n-2 times every time, meaning it is O(n)).
 
-Multiple Recursion:
+c)  The Linear Recursion Algorithm does not currently implement
+    tail recursion, as the recursive call is not the last
+    instruction to be executed. It has been implemented that way
+    because the only parameter given to the function is the number
+    of elements we want to calculate.
