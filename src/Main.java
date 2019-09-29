@@ -2,7 +2,7 @@
 
 // Written by:
 // Pierre-Olivier Trottier (40059235)
-// Nimit Jaggi (00000000)
+// Nimit Jaggi (40032159)
 
 // SEE THE FILE "Observations.txt" IN THE ROOT OF THE PROJECT FOR
 // OUR OBSERVATIONS OF THE RESULTS.

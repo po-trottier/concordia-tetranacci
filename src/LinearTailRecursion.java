@@ -27,7 +27,7 @@ class LinearTailRecursion {
   static long[] TetranacciRecursion(int n, long[] A) {
     // Increase the executions called counter by 1
     callsCounter++;
-    // Stubbing Cases
+    // Stopping Cases
     if (n < 4) {
       return A;
     }
