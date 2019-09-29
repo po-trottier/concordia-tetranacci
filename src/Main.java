@@ -60,7 +60,21 @@ public class Main {
   }
 
   private static void runMultipleAlgorithm(int x) {
-    MultipleRecursion.Tetranacci(x);
+    System.out.println("Getting the Tetranacci sequence for n = " + x);
+    // Reset the Call Counter before every execution
+    MultipleRecursion.callsCounter = 0;
+    // Get the time in Nano Seconds before the Algorithm is executed
+    long startTime = System.nanoTime();
+    // Execute the Algorithm
+    long A = MultipleRecursion.Tetranacci(x);
+    // Get the time in Nano Seconds after the Algorithm was executed
+    long endTime = System.nanoTime();
+    // Get the time time difference (Time Elapsed)
+    long timeElapsed = endTime - startTime;
+    // Output the results
+    System.out.println("The value for Tetranacci(" + x + ") is: " + A);
+    System.out.println("The function was called " + MultipleRecursion.callsCounter + " times.");
+    System.out.println("The function executed in " + timeElapsed + " ns.");
   }
 
   private static void redirectConsoleOutput(String file) {
@@ -108,10 +122,11 @@ public class Main {
     // EXECUTE THE MULTIPLE RECURSION ALGORITHM
 
     // Redirect Console Output to OutMultiple.txt
-    redirectConsoleOutput("OutMultiple.txt");
+    // This code was disabled to avoid overwriting the previously obtained results
+    // redirectConsoleOutput("OutMultiple.txt");
 
     System.out.println("Running the Multiple Recursive Algorithm");
-    System.out.println("----------------------------------------\n");
+    System.out.println("-----------------------------------------\n");
 
     // Run the multiple algorithm for n = 5, n = 10, n = 15, n = 20, etc.
     for(int i = 5; i <= 100; i += 5) {

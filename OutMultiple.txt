@@ -1,0 +1,39 @@
+Running the Multiple Recursive Algorithm
+----------------------------------------
+
+Getting the Tetranacci sequence for n = 5
+The value for Tetranacci(5) is: 2
+The function was called 9 times.
+The function executed in 5600 ns.
+
+Getting the Tetranacci sequence for n = 10
+The value for Tetranacci(10) is: 56
+The function was called 241 times.
+The function executed in 13900 ns.
+
+Getting the Tetranacci sequence for n = 15
+The value for Tetranacci(15) is: 1490
+The function was called 6425 times.
+The function executed in 284200 ns.
+
+Getting the Tetranacci sequence for n = 20
+The value for Tetranacci(20) is: 39648
+The function was called 170977 times.
+The function executed in 1018900 ns.
+
+Getting the Tetranacci sequence for n = 25
+The value for Tetranacci(25) is: 1055026
+The function was called 4549673 times.
+The function executed in 13691600 ns.
+
+Getting the Tetranacci sequence for n = 30
+The value for Tetranacci(30) is: 28074040
+The function was called 121065937 times.
+The function executed in 422639800 ns.
+
+Getting the Tetranacci sequence for n = 35
+The value for Tetranacci(35) is: 747044834
+The function was called 3221541433 times.
+The function executed in 7541227700 ns.
+
+Getting the Tetranacci sequence for n = 40
