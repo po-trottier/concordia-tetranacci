@@ -77,6 +77,7 @@ public class Main {
     System.out.println("The function executed in " + timeElapsed + " ns.");
   }
 
+  // Helper method to redirect the console output to a specific file
   private static void redirectConsoleOutput(String file) {
     PrintStream fileOut = null;
     try {

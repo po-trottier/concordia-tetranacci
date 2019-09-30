@@ -1,3 +1,5 @@
+// Written by Pierre-Olivier Trottier
+
 // PSEUDOCODE:
 // Algorithm Tetranacci(n, A)
 //    Inputs: The number of terms "n" to calculate & the Array A containing the last 4 numbers of the series

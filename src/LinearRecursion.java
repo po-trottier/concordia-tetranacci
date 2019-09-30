@@ -1,3 +1,5 @@
+// Written by Pierre-Olivier Trottier
+
 // PSEUDOCODE:
 // Algorithm Tetranacci(n)
 //    Input: The number of terms "n" to calculate

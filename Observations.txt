@@ -1,13 +1,14 @@
 a)  See the LinearTailRecursion and MultipleRecursion classes for
     the implementations of the algorithms.
 
-b)  The Linear Recursion Algorithm is of exponential space
-    complexity as it is not using tail recursion. Therefore,
-    every time the function calls itself (LinearTailRecursion : 58)
-    it must wait for the next call to finish before it can finish
-    (it follows a first-in-last-out order). As for the time
-    complexity, the algorithm seems to follow a linear complexity
+b)  The Linear Recursion Algorithm seems to follow a linear complexity
     (executed n-2 times every time, meaning it is O(n)).
+
+    Multiple recursion on the other hand, is a lot slower because at every call, 
+    It needs to call the four previous values. i.e. for n = 5, it calls (n-1), (n-2)
+    (n-3) and (n-4) making this an exponential time complexity. This causes a bottleneck
+    as the value of n grows. Linear recursion solves this issue by reusing the same values
+    Over and thus saving time. 
 
 c)  The Linear Recursion Algorithm does not currently implement
     tail recursion, as the recursive call is not the last
@@ -23,3 +24,6 @@ c)  The Linear Recursion Algorithm does not currently implement
     next element. we must therefore start with the array [0,0,0,1].
     The tail recursive code for the linear algorithm is located in
     the "LinearTailRecursion" class.
+
+    The Multiple recursion does not implement tail recursion since tail recursion is
+    only applicable to linearly recursive algorithms. 
